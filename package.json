@@ -4,7 +4,9 @@
   "description": "Simpla javascript library",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "nyc mocha",
+    "test2": "mocha --reporter spec",
+    "test3": "JS_COV=1 _mocha test -R mocha-lcov-reporter"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.1.2",
-    "mocha": "^3.5.3"
-  }
+    "mocha": "^3.5.3",
+    "nyc": "^11.2.1"
+  },
+  "devDependencies": {}
 }

@@ -4,9 +4,7 @@
   "description": "Simpla javascript library",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha",
-    "test2": "mocha --reporter spec",
-    "test3": "JS_COV=1 _mocha test -R mocha-lcov-reporter"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",

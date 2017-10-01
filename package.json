@@ -1,0 +1,18 @@
+{
+  "name": "glibrary",
+  "version": "1.0.2",
+  "description": "Simpla javascript library",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "glib",
+    "javascript",
+    "util",
+    "library"
+  ],
+  "author": "Gabriel Csollei <gcsollei@hotmail.com>",
+  "license": "ISC",
+  "dependencies": {}
+}

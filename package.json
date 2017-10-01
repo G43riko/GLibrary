@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha --reporter spec"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/G43riko/GLibrary.git"
+  },
   "keywords": [
     "glib",
     "javascript",

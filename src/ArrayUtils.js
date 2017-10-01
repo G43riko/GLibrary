@@ -1,6 +1,6 @@
 "use strict";
     
-exports.isIn = function() {
+exports.isIn = function(obj, data) {
     if (Array.isArray(data)) {
         if (data.indexOf(obj) >= 0) {
             return true;

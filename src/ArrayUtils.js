@@ -6,7 +6,7 @@ exports.isIn = function(obj, data) {
             return true;
         }
     } else {
-        for(let i = 1 ; i < arguments.length ; i++) {
+        for(var i = 1 ; i < arguments.length ; i++) {
             if (arguments[i] === obj) {
                 return true;
             }

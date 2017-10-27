@@ -16,7 +16,8 @@ exports.isIn = function(obj, data) {
 }
 
 function generateArrayUtils(target = {}) {
-    const staticTarget = target === Array.prototype ? Array : target;
+    const isTargetPrototype = target === Array.prototype;
+    const staticTarget = isTargetPrototype ? Array : target;
 
     staticTarget.subArray = function(array, from = 0, to = array.length) {
         const result = [];
@@ -75,5 +76,17 @@ function generateArrayUtils(target = {}) {
         return thisArg.reduce((a, b) => a + b) / thisArg.length;
     };
 
+    target.isEmpty = function(thisArg = this) {
+        return thisArg.length === 0;
+    };
+
     return target;
 }
+
+/**
+ * TODO: 
+ * sortBy()
+ * where(array, { "!age": 10 })
+ * a.without([ 1, 2, 3 ], [ 2, 3, anotherValue ])
+ * pluck(data, key) map podla keyu
+ */

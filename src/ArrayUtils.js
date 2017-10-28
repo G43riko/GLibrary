@@ -28,6 +28,29 @@ function generateArrayUtils(target = {}) {
         return result;
     };
 
+    staticTarget.where = function(array, condition) {
+        const result = [];
+        for (let i = 0 ; i < array.length ; i++) {
+            let add = true;
+            for(const key in condition) {
+                if (condition.hasOwnProperty(key)) {
+                    if(array[i][key] !== condition[key]) {
+                        add = false;
+                        break;
+                    }
+                }
+            }
+            if (add) {
+                result[result.length] = array[i];
+            }
+        }
+        return result;
+    };
+
+    staticTarget.without = function(array, condition) {
+        // TODO
+    }
+
     target.last = function(thisArg = this) {
         if (thisArg.length === 0) {
             return null;
@@ -35,6 +58,7 @@ function generateArrayUtils(target = {}) {
     
         return thisArg[thisArg.length - 1];
     };
+
     
     target.unique = function(thisArg = this) {
         const length = thisArg.length;

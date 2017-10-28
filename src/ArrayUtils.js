@@ -1,19 +1,4 @@
 "use strict";
-    
-exports.isIn = function(obj, data) {
-    if (Array.isArray(data)) {
-        if (data.indexOf(obj) >= 0) {
-            return true;
-        }
-    } else {
-        for (let i = 1 ; i < arguments.length ; i++) {
-            if (arguments[i] === obj) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
 
 function generateArrayUtils(target = {}) {
     const isTargetPrototype = target === Array.prototype;
@@ -52,7 +37,7 @@ function generateArrayUtils(target = {}) {
     }
 
     target.last = function(thisArg = this) {
-        if (thisArg.length === 0) {
+        if (!Array.isArray(thisArg) || thisArg.length === 0) {
             return null;
         }
     
@@ -107,10 +92,34 @@ function generateArrayUtils(target = {}) {
     return target;
 }
 
+class ArrayUtils {
+    static isIn (obj, data) {
+        if (Array.isArray(data)) {
+            if (data.indexOf(obj) >= 0) {
+                return true;
+            }
+        } else {
+            for (let i = 1 ; i < arguments.length ; i++) {
+                if (arguments[i] === obj) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    static applyToPrototype() {
+        return generateArrayUtils(Array.prototype);
+    }
+
+    static applyTo(object = {}) {
+        return generateArrayUtils(object);
+    }
+}
+exports.ArrayUtils = ArrayUtils;
 /**
  * TODO: 
  * sortBy()
- * where(array, { "!age": 10 })
  * a.without([ 1, 2, 3 ], [ 2, 3, anotherValue ])
  * pluck(data, key) map podla keyu
  */

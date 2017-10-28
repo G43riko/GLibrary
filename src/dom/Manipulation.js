@@ -1,4 +1,4 @@
-document.parentElement"use strict";
+"use strict";
 
 exports.remove = function(element) {
     const parentElement = element.parentElement;

@@ -25,6 +25,6 @@ exports.isArray = function(val) {
 exports.isEmpty = function(val) {
     return Object.keys(val).length === 0 || val === [] || val === "";
 }
-export.isElement = function(val) {
-    return return val instanceof HTMLElement;
+exports.isElement = function(val) {
+    return val instanceof HTMLElement;
 }

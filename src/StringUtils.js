@@ -1,7 +1,7 @@
 const accentedCharacters  = "áäčďéíĺľňóôŕšťúýžÁÄČĎÉÍĹĽŇÓÔŔŠŤÚÝŽàèìòùáéíóúýâêîôûãñõäëïöüÿÀÈÌÒÙÁÉÍÓÚÝÂÊÎÔÛÃÑÕÄËÏÖÜŸ";
 const normalCharacters    = "aacdeillnoorstuyzAACDEILLNOORSTUYZaeiouaeiouyaeiouanoaeiouyAEIOUAEIOUYAEIOUANOAEIOUY";
 
-export class StringUtils {
+exports.StringUtils = class  {
     static removeAccentedCharacters(word) {
         const result = [];
         for (let i = 0 ; i < word.length ; i++) {

@@ -55,6 +55,7 @@ exports.createClass = function(name, ...args) {
     name.apply(temp, arguments);
     return temp;
 }
+
 exports.parseCookies = function (cookies) {
 	const list = {}
  

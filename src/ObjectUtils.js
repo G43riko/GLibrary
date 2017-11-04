@@ -1,7 +1,18 @@
-function generateArrayUtils(target = {}) {
-    const isTargetPrototype = target === Array.prototype;
-    const staticTarget = isTargetPrototype ? Array : target;
+function generateObjectUtils(target = {}) {
+    const isTargetPrototype = target === Object.prototype;
+    const staticTarget = isTargetPrototype ? Object : target;
 
+    staticTarget.without = function(obj, items) {
+        const result = {};
+        for (const objKey in obj) {
+            if (obj.hasOwnProperty(objKey)) {
+                if(items.indexOf(objKey) < 0) {
+                    result[objKey] = obj[objKey];
+                }
+            }
+        }
+        return result;
+    };
     target.size = function(thisArg = this) {
         let result = 0;
         for(const i in this){
@@ -11,6 +22,11 @@ function generateArrayUtils(target = {}) {
         }
         return result;
     };
+
+    target.isPlain = function(thisArg = this) {
+        // TODO
+    }
+    return target;
 }
 
 class ObjectUtils {

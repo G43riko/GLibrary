@@ -89,6 +89,16 @@ function generateArrayUtils(target = {}) {
         return thisArg.length === 0;
     };
 
+    target.compact = function(thisArg = this) {
+        const result = [];
+        for(let i = 0 ; i < thisArg.length ; i++) {
+            if (thisArg[i]) {
+                result[resul.length] = thisArg[i];
+            }
+        }
+        return result;
+    };
+
     return target;
 }
 

@@ -10,6 +10,54 @@
 GLibrary is simple javascript library
 
 
- - array
-     - isIn(array)
+ - ArrayUttils
+     - isIn(array, items)
      - last(array)
+     - subArray(array, start, end)
+     - where(array, condition)
+     - without(array, condition)
+     - unique(array)
+     - swap(array)
+     - max(array)
+     - min(array)
+     - avg(array)
+     - sum(array)
+     - isEmpty(array)
+     - compact(array)
+ - ObjectUtils
+     - isPlain(object)
+     - without(object, condition)
+     - where(object, condition)
+     - sizeOf(object)
+ - CheckerUtils
+     - isFunction(variable)
+     - isString(variable)
+     - isObject(variable)
+     - isBool(variable)
+     - isNumber(variable)
+     - isFloat(variable)
+     - isInt(variable)
+     - isArray(variable)
+     - isEmpty(variable)
+     - isElement(variable)
+ - GetUtils
+     - byId(id)
+     - byClass(className)
+     - byLink(link)
+     - byName(name)
+     - byTag(tagName)
+ - MathUtils
+     - binomialCoeficient(n, k)
+     - choose(...args)
+     - log2i(value)
+     - average(..args)
+     - clap(value, min, max)
+     - rand(min, max)
+     - lerp(a, b, value)
+ - BrowseAnalyzer
+     - getBrowserData()
+     - getNaigatorData()
+     - getWindowData()
+     - getScreenData()
+     - getLocationData()
+     - getAllData()

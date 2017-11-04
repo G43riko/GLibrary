@@ -7,8 +7,8 @@ const accentedCharacters = accentedLowerCharacters + accentedLowerCharacters.toU
 const normalCharacters = normalLowerCharacters + normalLowerCharacters.toUpperCase();
 
 function generateStringUtils(target = {}) {
-    const isTargetPrototype = target === Array.prototype;
-    const staticTarget = isTargetPrototype ? Array : target;
+    const isTargetPrototype = target === String.prototype;
+    const staticTarget = isTargetPrototype ? String : target;
 
     staticTarget.between = function(text, key1, key2) {
         const startPos = text.indexOf(key1);
@@ -167,6 +167,12 @@ export class StringUtils {
     static dasherize(word) {
         // TODO
     } 
+
+    //TODO dashCase = a-b-c-d-e
+    //TODO dotCase a.c.d.v.s.d
+    //TODO pascalCase = FooBarBaz
+    //TODO pathCase = a/b/c/d
+    //TODO snakeCase = a_b_c_d_
     static isUpper(word) {
         // TODO
     }

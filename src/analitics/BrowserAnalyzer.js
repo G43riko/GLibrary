@@ -1,13 +1,13 @@
 exports.getBrowser = function() {
-    var userAgent = navigator.userAgent;
-    var isFirefox = userAgent.search(/Firefox/) != -1;
-    var isIE = userAgent.search(/MSIE/) != -1;
-    var isOpera = userAgent.search(/Opera/) != -1;
-    var isChrome = userAgent.search(/Chrome/) != -1;
-    var isSafari = userAgent.search(/Safari/) != -1;
+    let userAgent = navigator.userAgent;
+    let isFirefox = userAgent.search(/Firefox/) != -1;
+    let isIE = userAgent.search(/MSIE/) != -1;
+    let isOpera = userAgent.search(/Opera/) != -1;
+    let isChrome = userAgent.search(/Chrome/) != -1;
+    let isSafari = userAgent.search(/Safari/) != -1;
 
-    var result = "";
-    var version = 0.0;
+    let result = "";
+    let version = 0.0;
 
     if (isIE) {
         result = userAgent.match(/MSIE [0-9\.]*/)[0];

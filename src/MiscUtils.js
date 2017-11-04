@@ -37,7 +37,6 @@ exports.setConstants = (function(){
     };
     return (data, object = (typeof window !== "undefined" ?  window : {})) => {
         const options = loadOptions(data);
-        console.log("loaded options: ", options)
         for (const key in options) {
             if (options.hasOwnProperty(key)) {
                 Object.defineProperty(object, key.toUpperCase(), {
@@ -56,7 +55,7 @@ exports.createClass = function(name, ...args) {
     return temp;
 }
 
-exports.parseCookies = function (cookies) {
+exports.parseCookies = function(cookies) {
 	const list = {}
  
 	cookies && cookies.split(';').forEach((cookie) => {
@@ -103,7 +102,7 @@ exports.roughSizeOfObject = function(object) {
         } else if (typeof value === 'object' && objectList.indexOf( value ) === -1) {
 			objectList.push(value);
 			for (const i in value) {
-				if (value.hasOwnProperty(i)) {
+				if (!value.hasOwnProperty || value.hasOwnProperty(i)) {
                     stack.push(value[i]);
                 }
             }

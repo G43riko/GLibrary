@@ -34,7 +34,8 @@ function generateArrayUtils(target = {}) {
 
     staticTarget.without = function(array, condition) {
         // TODO
-    }
+        return condition;
+    };
 
     target.last = function(thisArg = this) {
         if (!Array.isArray(thisArg) || thisArg.length === 0) {
@@ -93,7 +94,7 @@ function generateArrayUtils(target = {}) {
         const result = [];
         for(let i = 0 ; i < thisArg.length ; i++) {
             if (thisArg[i]) {
-                result[resul.length] = thisArg[i];
+                result[result.length] = thisArg[i];
             }
         }
         return result;

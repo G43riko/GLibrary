@@ -15,8 +15,8 @@ function generateObjectUtils(target = {}) {
     };
     target.size = function(thisArg = this) {
         let result = 0;
-        for(const i in this){
-            if(this.hasOwnProperty(i)){
+        for(const i in thisArg){
+            if(thisArg.hasOwnProperty(i)){
                 result++;
             }
         }
@@ -25,7 +25,8 @@ function generateObjectUtils(target = {}) {
 
     target.isPlain = function(thisArg = this) {
         // TODO
-    }
+        return thisArg;
+    };
     return target;
 }
 

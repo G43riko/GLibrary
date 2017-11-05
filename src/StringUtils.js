@@ -36,16 +36,16 @@ function generateStringUtils(target = {}) {
     };
 
     staticTarget.template = function(text, values, start = "{{", end = "}}") {
-        start = start.replace(/[-[\]()*\s]/g, "\\$&").replace(/\$/g, '\\$');
-        end = end.replace(/[-[\]()*\s]/g, "\\$&").replace(/\$/g, '\\$');
+        start = start.replace(/[-[\]()*\s]/g, "\\$&").replace(/\$/g, "\\$");
+        end = end.replace(/[-[\]()*\s]/g, "\\$&").replace(/\$/g, "\\$");
         const regexp = new RegExp(start + "(.+?)'" + end, "g");
         console.log("regexp: ", regexp);
         const matches = text.match(regexp) || [];
 
-        for(let i = 0 ; i<matches.length ; i++) {
+        for(let i = 0 ; i < matches.length ; i++) {
             const match = matches[i];
             const key = match.substring(start.length, match.length - end.length).trim();
-            const value = values[key]
+            const value = values[key];
             if (value) {
                 console.log("match: ", match);
                 console.log("key: ", key);
@@ -67,7 +67,7 @@ function generateStringUtils(target = {}) {
 
     target.getAsciiArray = function(thisArg = this) {
         const result = [];
-        for(let i = 0 ; i < thisArg.length ; i++) {
+        for(let i = 0 ; i < thisArg.length ; i++) {
             result[result.length] = thisArg[i].charCodeAt(0);
         }
         return result;
@@ -81,7 +81,7 @@ function generateStringUtils(target = {}) {
     };
 
     target.collapseWhitespace = function(thisArg = this) {
-        return thisArg.replace(/^[\s\uFEFF\xA0]{2,}/g, '');
+        return thisArg.replace(/^[\s\uFEFF\xA0]{2,}/g, "");
     };
 
     target.swapCase = function(thisArg = this) {

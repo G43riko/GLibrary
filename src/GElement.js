@@ -25,5 +25,5 @@ exports.GElement = function(element) {
         getAttribute(attribute) {
             return element.getAttribute(attribute);
         }
-    }
-}
+    };
+};

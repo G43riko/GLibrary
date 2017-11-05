@@ -7,24 +7,20 @@ exports.getBrowser = function() {
     let isSafari = userAgent.search(/Safari/) != -1;
 
     let result = "";
-    let version = 0.0;
-
     if (isIE) {
-        result = userAgent.match(/MSIE [0-9\.]*/)[0];
-        isInternetExplorer = true;
+        result = userAgent.match(/MSIE [0-9.]*/)[0];
     } else if (isFirefox) {
-        result = userAgent.match(/Firefox\/[0-9\.]*/)[0];
-        isFirefoxBrowser = true;
+        result = userAgent.match(/Firefox\/[0-9.]*/)[0];
     } else if (isOpera) {
-        result = "Opera " + userAgent.match(/Version\/[0-9\.]*/)[0];
+        result = "Opera " + userAgent.match(/Version\/[0-9.]*/)[0];
     } else if (isChrome) {
-        result = userAgent.match(/Chrome\/[0-9\.]*/)[0];
+        result = userAgent.match(/Chrome\/[0-9.]*/)[0];
     } else if (isSafari) {
-        result = "Safari " + userAgent.match(/Version\/[0-9\.]*/)[0];
+        result = "Safari " + userAgent.match(/Version\/[0-9.]*/)[0];
     }
 
     return result;
-}
+};
 
 exports.gerNavigatorData = function() {
     const result = {};
@@ -35,7 +31,7 @@ exports.gerNavigatorData = function() {
         result.vendor		= navigator.vendor;
     }
     return result;
-}
+};
 
 exports.getWindowData = function(){
     const result = {};
@@ -52,7 +48,7 @@ exports.getWindowData = function(){
         result.innerHeight = document.getElementsByTagName("body")[0].clientHeight;
     }
     return result;
-}
+};
 
 exports.getScreenData = function() {
     const result = {};
@@ -61,11 +57,10 @@ exports.getScreenData = function() {
         result.availWidth		= screen.availWidth;
     }
     return result;
-}
+};
 
 exports.getLocation = function() {
     return new Promise((success, reject) => {
-        const data = {};
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(a => success({
                 accularity: a.coords && a.coords.accuracy  || "unknown",
@@ -77,4 +72,4 @@ exports.getLocation = function() {
             reject("Geolocation is not supported by this browser.");
         }
     });
-}
+};

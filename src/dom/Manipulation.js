@@ -5,4 +5,4 @@ exports.remove = function(element) {
     if (parentElement) {
         parentElement.removeChild(element);
     }
-}
+};

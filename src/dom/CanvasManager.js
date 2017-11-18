@@ -71,7 +71,6 @@ class CanvasManager{
     }
  
     static setLineDash(ctx, ...args){
-        //TODO otestovať;
         if(typeof ctx.setLineDash === "function"){
             ctx.setLineDash(args);
         }

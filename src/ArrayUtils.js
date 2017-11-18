@@ -33,7 +33,7 @@ function generateArrayUtils(target = {}) {
     };
 
     staticTarget.without = function(thisArg = this, condition) {
-        return thisArg;
+        return thisArg || condition;
     };
 
     target.last = function(thisArg = this) {

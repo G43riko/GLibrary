@@ -29,7 +29,7 @@ function generateObjectUtils(target = {}) {
         for (const index in thisArg) {
             if (thisArg.hasOwnProperty(index)) {
                 if (typeof thisArg[index] === "undefined") {
-                   return false;
+                    return false;
                 }
             }
         }

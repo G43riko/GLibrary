@@ -1,3 +1,5 @@
+"use strict";
+
 exports.GElement = function(element) {
 
     return {

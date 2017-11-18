@@ -1,3 +1,5 @@
+"use strict";
+
 class CanvasManager{
     constructor(arg1, arg2, arg3){//ARGUMENT JE CANVAS ELEMENT
         if(arg1 instanceof HTMLCanvasElement){

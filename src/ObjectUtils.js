@@ -1,3 +1,5 @@
+"use strict";
+
 function generateObjectUtils(target = {}) {
     const isTargetPrototype = target === Object.prototype;
     const staticTarget = isTargetPrototype ? Object : target;

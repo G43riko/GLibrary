@@ -1,7 +1,7 @@
-var chai = require("chai");
-var expect = chai.expect;
-var should = chai.should();
-var StringUtils = require("../src/StringUtils").StringUtils;
+const chai = require("chai");
+const expect = chai.expect;
+const should = chai.should();
+const StringUtils = require("../src/StringUtils").StringUtils;
 
 const chars = "+=§,.-?:_\"!)/()<>*\'$[]}{*&^%$#@!/\\|#&@{}^'`][~\|€¶←↓→º’‘©><§®ª`←'↓&×÷|÷×";
 const caseable = "þÞıŦŧŊEĐđNΩ";
@@ -9,13 +9,13 @@ const numbers = "0123456789";
 const accented = "ľščťžýáíéäôňŁłŁØÆŁÐø";
 const testString = "ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž";
 const resultString = "aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz";
+const text = "abcdedabcdedabcdjidABdsdcdsjo";
 
 
 describe("string utils", function() {
     describe("it test string functions", function(){
         const Utils = StringUtils.applyTo();
 
-        const text = "abcdedabcdedabcdjidABdsdcdsjo";
         it("test count", function(){
             expect(Utils.count(text, "ab")).to.be.equal(3);
             expect(Utils.count("gabriel", "")).to.be.equal(8);
@@ -39,7 +39,7 @@ describe("string utils", function() {
             const params = {
                 meno: "Gabo",
                 vek: 23
-            }
+            };
             const text = "{{meno}} je starý {{vek}} rokov";
             // expect(Utils.template(text, params)).to.be.equal("Gabo je starý 23 rokov");
         });
@@ -109,4 +109,4 @@ describe("string utils", function() {
             expect(".".isEmpty()).to.be.false;
         });
     });
-})
+});

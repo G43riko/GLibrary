@@ -1,3 +1,5 @@
+"use strict";
+
 exports.binomialCoefficient = function(n, k) {
     let r = 1;
     if (k > n) {

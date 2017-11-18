@@ -1,3 +1,5 @@
+"use strict";
+
 exports.isFunction = function(val) {
     return typeof val === "function";
 };

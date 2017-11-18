@@ -1,10 +1,10 @@
 exports.getBrowser = function() {
     let userAgent = navigator.userAgent;
-    let isFirefox = userAgent.search(/Firefox/) != -1;
-    let isIE = userAgent.search(/MSIE/) != -1;
-    let isOpera = userAgent.search(/Opera/) != -1;
-    let isChrome = userAgent.search(/Chrome/) != -1;
-    let isSafari = userAgent.search(/Safari/) != -1;
+    let isFirefox = userAgent.search(/Firefox/) !== -1;
+    let isIE = userAgent.search(/MSIE/) !== -1;
+    let isOpera = userAgent.search(/Opera/) !== -1;
+    let isChrome = userAgent.search(/Chrome/) !== -1;
+    let isSafari = userAgent.search(/Safari/) !== -1;
 
     let result = "";
     if (isIE) {
@@ -35,11 +35,13 @@ exports.gerNavigatorData = function() {
 
 exports.getWindowData = function(){
     const result = {};
-    if (typeof window.innerWidth != "undefined") {
+    if (typeof window.innerWidth !== "undefined") {
         result.innerWidth = window.innerWidth;
         result.innerHeight = window.innerHeight;
     }
-    else if (typeof document.documentElement != "undefined" && typeof document.documentElement.clientWidth != "undefined" && document.documentElement.clientWidth != 0) {
+    else if (typeof document.documentElement !== "undefined" &&
+             typeof document.documentElement.clientWidth !== "undefined" &&
+        document.documentElement.clientWidth !== 0) {
         result.innerWidth = document.documentElement.clientWidth;
         result.innerHeight = document.documentElement.clientHeight;
     }

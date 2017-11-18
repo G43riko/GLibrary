@@ -1,3 +1,5 @@
+"use strict";
+
 exports.setConstants = (function(){
     let pattern = new RegExp("^<%= .* %>$");
     let loadOptions = (data, key = "") => {
@@ -76,8 +78,7 @@ exports.queryString = function() {
             query_string[pair[0]] = decodeURIComponent(pair[1]);
         }
         else if(typeof query_string[pair[0]] === "string") {
-            const arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-            query_string[pair[0]] = arr;
+            query_string[pair[0]] = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
         }
         else{
             query_string[pair[0]].push(decodeURIComponent(pair[1]));
@@ -102,7 +103,7 @@ exports.roughSizeOfObject = function(object) {
         } else if (typeof value === "object" && objectList.indexOf( value ) === -1) {
             objectList.push(value);
             for (const i in value) {
-                if (!value.hasOwnProperty || value.hasOwnProperty(i)) {
+                if (value.hasOwnProperty(i)) {
                     stack.push(value[i]);
                 }
             }

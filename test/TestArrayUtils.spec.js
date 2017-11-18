@@ -1,7 +1,7 @@
-var chai = require("chai");
-var expect = chai.expect;
-var should = chai.should();
-var ArrayUtils = require("../src/ArrayUtils").ArrayUtils;
+const chai = require("chai");
+const expect = chai.expect;
+const should = chai.should();
+const ArrayUtils = require("../src/ArrayUtils").ArrayUtils;
 
 describe("array utils", function() {
     describe("it appy function to Array prototype", function() {
@@ -9,7 +9,7 @@ describe("array utils", function() {
             should.exist(ArrayUtils.applyTo);
             should.exist(ArrayUtils.applyToPrototype);
             should.exist(ArrayUtils.isIn);
-        })
+        });
         it("Array prototype have not any utils", function(){
             expect(Array.prototype.unique).to.be.undefined;
             expect(Array.prototype.where).to.be.undefined;
@@ -24,7 +24,7 @@ describe("array utils", function() {
             expect(Array.prototype.isEmpty).to.be.undefined;
         });
         // arrays.applyToPrototype();
-    })
+    });
     
     describe("isIn function", function() {
         it("no argument", function(){

@@ -1,5 +1,5 @@
-var expect = require("chai").expect;
-var utils = require("../src/MiscUtils");
+const expect = require("chai").expect;
+const utils = require("../src/MiscUtils");
 
 describe("misc  utils", function() {
     describe("config creator", function() {

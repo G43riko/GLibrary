@@ -8,11 +8,11 @@ exports.remove = function(element) {
 };
 
 exports.indexOf = function(element) {
-        let index = 0;
-        while( (element = element.previousElementSibling) !== null ){
-            index++;
-        }
-        return index;
+    let index = 0;
+    while( (element = element.previousElementSibling) !== null ){
+        index++;
+    }
+    return index;
 };
 
 exports.position = function(element){

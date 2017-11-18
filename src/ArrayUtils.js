@@ -32,9 +32,8 @@ function generateArrayUtils(target = {}) {
         return result;
     };
 
-    staticTarget.without = function(array, condition) {
-        // TODO
-        return condition;
+    staticTarget.without = function(thisArg = this, condition) {
+        return thisArg;
     };
 
     target.last = function(thisArg = this) {
@@ -129,7 +128,6 @@ class ArrayUtils {
 }
 exports.ArrayUtils = ArrayUtils;
 /**
- * TODO: 
  * sortBy()
  * a.without([ 1, 2, 3 ], [ 2, 3, anotherValue ])
  * pluck(data, key) map podla keyu

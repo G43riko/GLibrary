@@ -26,8 +26,14 @@ function generateObjectUtils(target = {}) {
     };
 
     target.isPlain = function(thisArg = this) {
-        // TODO
-        return thisArg;
+        for (const index in thisArg) {
+            if (thisArg.hasOwnProperty(index)) {
+                if (typeof thisArg[index] === "undefined") {
+                   return false;
+                }
+            }
+        }
+        return true;
     };
     return target;
 }

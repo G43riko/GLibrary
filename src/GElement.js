@@ -22,7 +22,7 @@ exports.GElement = function(element) {
             return !element.disabled;
         },
         isVisible() {
-            // TODO
+            return window.getComputedStyle(element).display === 'none' && element.offsetParent === null;
         },
         getAttribute(attribute) {
             return element.getAttribute(attribute);

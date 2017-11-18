@@ -75,7 +75,6 @@ function generateStringUtils(target = {}) {
 
     target.capitalize = function(thisArg = this) {
         const result = thisArg.toLowerCase().split("");
-        // TODO first letter
         result[0] = result[0].toUpperCase();
         return result.join("");
     };
@@ -158,27 +157,22 @@ export class StringUtils {
     }
 
     static underscore(word) {
-        //TODO 
     }
 
     static humanize(word) {
-        // TODO
     }
     static dasherize(word) {
-        // TODO
-    } 
+    }
 
-    //TODO dashCase = a-b-c-d-e
-    //TODO dotCase a.c.d.v.s.d
-    //TODO pascalCase = FooBarBaz
-    //TODO pathCase = a/b/c/d
-    //TODO snakeCase = a_b_c_d_
+    //dashCase = a-b-c-d-e
+    //dotCase a.c.d.v.s.d
+    //pascalCase = FooBarBaz
+    //pathCase = a/b/c/d
+    //snakeCase = a_b_c_d_
     static isUpper(word) {
-        // TODO
     }
 
     static isLower(word) {
-        // TODO
     }
 }
 */

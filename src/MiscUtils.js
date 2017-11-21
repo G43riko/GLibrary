@@ -68,6 +68,20 @@ exports.parseCookies = function(cookies) {
     return list;
 };
 
+exports.getFormattedNumber = function(number, prefix = "+421") {
+    number = number.replace(/[( )/-]/g, "");
+    if (number.startsWith("+")) {
+        return number;
+    }
+    if (number.startsWith("00")) {
+        return number.substring(2);
+    }
+    if (number.startsWith("09") || number.startsWith("02")) {
+        return prefix + number.substring(1);
+    }
+    return number;
+}
+
 exports.queryString = function() {
     const query_string = {};
     const query = window.location.search.substring(1);

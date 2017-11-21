@@ -57,12 +57,18 @@ function generateStringUtils(target = {}) {
     };
 
     target.removeAccentedCharacters = function(thisArg = this) {
+        return thisArg.replace(/./g, (e) => {
+            const index = accentedCharacters.indexOf(e);
+            return index >= 0 ? normalCharacters[index] : e;
+        });
+        /*
         const result = [];
         for (let i = 0 ; i < thisArg.length ; i++) {
             const index = accentedCharacters.indexOf(thisArg[i]);
             result[result.length] = index >= 0 ? normalCharacters[index] : thisArg[i];
         }
         return result.join("");
+        */
     };
 
     target.getAsciiArray = function(thisArg = this) {

@@ -14,7 +14,7 @@ class CanvasManager{
         else{
             this._canvas = document.createElement("canvas");
  
-            if(arg1 && arg2){//ARGUMENTY SU VELKOST
+            if(arg1 && arg2){// ARGUMENTY SU VELKOST
                 this.setCanvasSize(arg1, arg2);
             }
         }

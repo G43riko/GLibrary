@@ -80,7 +80,7 @@ exports.getFormattedNumber = function(number, prefix = "+421") {
         return prefix + number.substring(1);
     }
     return number;
-}
+};
 
 exports.queryString = function() {
     const query_string = {};

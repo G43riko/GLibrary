@@ -17,6 +17,7 @@ GLibrary is simple javascript library
      - where(array, condition)
      - without(array, condition)
      - unique(array)
+     - joinWrap(array, delimiter, prefix, postfix)
      - swap(array)
      - max(array)
      - min(array)

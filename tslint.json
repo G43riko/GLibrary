@@ -1,0 +1,15 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {
+        "strict-type-predicates": false
+    },
+    "rules": {
+        "strict-type-predicates": true,
+        "strict-boolean-expressions": true,
+        "restrict-plus-operands": true
+    },
+    "rulesDirectory": []
+}

@@ -1,26 +1,37 @@
 {
-  "name": "glibrary",
-  "version": "1.0.36",
-  "description": "Simpla javascript library",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha --reporter spec"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/G43riko/GLibrary.git"
-  },
-  "keywords": [
-    "glib",
-    "javascript",
-    "util",
-    "library"
-  ],
-  "author": "Gabriel Csollei <gcsollei@hotmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^3.5.3"
-  },
-  "devDependencies": {}
+    "name": "glibrary",
+    "version": "1.0.36",
+    "description": "Simpla javascript library",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --reporter spec",
+        "build": "gulp"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/G43riko/GLibrary.git"
+    },
+    "keywords": [
+        "glib",
+        "javascript",
+        "util",
+        "library"
+    ],
+    "author": "Gabriel Csollei <gcsollei@hotmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "chai": "^4.1.2",
+        "gulp": "^3.9.1",
+        "gulp-typescript": "^4.0.2",
+        "gulp-uglify": "^3.0.0",
+        "mocha": "^3.5.3",
+        "tslint": "^5.9.1",
+        "typescript": "^2.8.1"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "gulp-babel": "^7.0.1",
+        "gulp-concat": "^2.6.1"
+    }
 }

@@ -24,6 +24,11 @@ exports.log2i = function(value) {
     return r;
 };
 
+exports.pad = function pad(num, size) {
+    const s = "000000000" + num;
+    return s.substr(s.length - size);
+};
+
 exports.average = function() {
     let sum = 0;
     for(let i = 0 ; i < arguments.length ; i++) {

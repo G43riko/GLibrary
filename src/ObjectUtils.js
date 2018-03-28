@@ -15,6 +15,15 @@ function generateObjectUtils(target = {}) {
         }
         return result;
     };
+    staticTarget.byPath = function(obj, path) {
+        const splitPath = path.split(".");
+
+        for (let i = 0 ; i < splitPath.length && obj ; i++) {
+            obj = obj[splitPath[i]];
+        }
+
+        return obj;
+    };
     target.size = function(thisArg = this) {
         let result = 0;
         for(const i in thisArg){

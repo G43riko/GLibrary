@@ -21,7 +21,7 @@ exports.position = function(element){
     do {
         top  += element.offsetTop  || 0;
         left += element.offsetLeft || 0;
-        element = element.offsetParent
+        element = element.offsetParent;
     } while(element);
 
     return {

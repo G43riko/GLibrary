@@ -1,6 +1,6 @@
 "use strict";
 
-exports.setConstants = (function(){
+exports.setConstants = (function () {
     let pattern = new RegExp("^<%= .* %>$");
     let loadOptions = (data, key = "") => {
         const options = {};
@@ -22,7 +22,7 @@ exports.setConstants = (function(){
                 }
             }
         }
-        if (key === ""){//ak je prvá iterácia tak opraví všetky templaty
+        if (key === "") {//ak je prvá iterácia tak opraví všetky templaty
             for (const i in templates) {
                 if (templates.hasOwnProperty(i)) {
                     let value = templates[i];
@@ -37,12 +37,12 @@ exports.setConstants = (function(){
         }
         return options;
     };
-    return (data, object = (typeof window !== "undefined" ?  window : {})) => {
+    return (data, object = (typeof window !== "undefined" ? window : {})) => {
         const options = loadOptions(data);
         for (const key in options) {
             if (options.hasOwnProperty(key)) {
                 Object.defineProperty(object, key.toUpperCase(), {
-                    value : options[key],
+                    value: options[key],
                     writable: false
                 });
             }
@@ -51,20 +51,20 @@ exports.setConstants = (function(){
     };
 })();
 
-exports.createClass = function(name, ...args) {
+exports.createClass = function (name, ...args) {
     const temp = Object.create(name.prototype);
     name.apply(temp, args);
     return temp;
 };
 
-exports.parseCookies = function(cookies) {
+exports.parseCookies = function (cookies) {
     const list = {};
- 
+
     cookies && cookies.split(";").forEach((cookie) => {
         const parts = cookie.split("=");
         list[parts.shift().trim()] = decodeURI(parts.join("="));
     });
- 
+
     return list;
 };
 
@@ -86,26 +86,26 @@ exports.queryString = function() {
     const query_string = {};
     const query = window.location.search.substring(1);
     const vars = query.split("&");
-    for (let i=0 ; i<vars.length ; i++) {
+    for (let i = 0; i < vars.length; i++) {
         const pair = vars[i].split("=");
-        if(typeof query_string[pair[0]] === "undefined") {
+        if (typeof query_string[pair[0]] === "undefined") {
             query_string[pair[0]] = decodeURIComponent(pair[1]);
         }
-        else if(typeof query_string[pair[0]] === "string") {
-            query_string[pair[0]] = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+        else if (typeof query_string[pair[0]] === "string") {
+            query_string[pair[0]] = [query_string[pair[0]], decodeURIComponent(pair[1])];
         }
-        else{
+        else {
             query_string[pair[0]].push(decodeURIComponent(pair[1]));
         }
     }
     return query_string;
 };
 
-exports.roughSizeOfObject = function(object) {
+exports.roughSizeOfObject = function (object) {
     const objectList = [];
     const stack = [object];
     let bytes = 0;
- 
+
     while (stack.length) {
         const value = stack.pop();
         if (typeof value === "boolean") {
@@ -114,7 +114,7 @@ exports.roughSizeOfObject = function(object) {
             bytes += value.length << 1;
         } else if (typeof value === "number") {
             bytes += 8;
-        } else if (typeof value === "object" && objectList.indexOf( value ) === -1) {
+        } else if (typeof value === "object" && objectList.indexOf(value) === -1) {
             objectList.push(value);
             for (const i in value) {
                 if (value.hasOwnProperty(i)) {
@@ -126,9 +126,19 @@ exports.roughSizeOfObject = function(object) {
     return bytes;
 };
 
-exports.includeFile = function(file) {
-    const script  = document.createElement("script");
-    script.src  = file;
+exports.objectToQueryParams = function (obj) {
+    let result = "";
+    for (const objKey in obj) {
+        if (obj.hasOwnProperty(objKey)) {
+            result += (result.length > 0 ? "&" : "?") + objKey + "=" + obj[objKey];
+        }
+    }
+    return result;
+};
+
+exports.includeFile = function (file) {
+    const script = document.createElement("script");
+    script.src = file;
     script.type = "text/javascript";
     script.defer = true;
     document.head.appendChild(script);
